@@ -8,11 +8,10 @@ MongoClient.connect(url, function (err, db) {
     console.log('Unable to connect to the mongoDB server. Error:', err);
   } else {
     console.log('Connection established to', url);
-    db.createCollection("Test", function(err, collection) {
+    db.createCollection("users", function(err, collection) {
     	if (err) throw err;
     	
-    	console.log("Create Test");
-    	console.log(collection);
+    	console.log("Create users collection");
     	db.close();
     });
   }
