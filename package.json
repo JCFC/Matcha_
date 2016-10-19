@@ -1,0 +1,19 @@
+{
+  "name": "matcha_",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JCFC/Matcha_.git"
+  },
+  "author": "JCHEN/JCFC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JCFC/Matcha_/issues"
+  },
+  "homepage": "https://github.com/JCFC/Matcha_#readme"
+}
