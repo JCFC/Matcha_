@@ -6,7 +6,7 @@ var express 	= require('express'),
 	register	= require('./routes/register'),
 	db			= require('./models/db');
 
-db.connect(function () {
+db.connect( () => {
 	
 	app.set('view engine', 'ejs');
 

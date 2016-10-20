@@ -3,7 +3,7 @@ var mongodb 	= require('mongodb'),
 	mongoUrl 	= 'mongodb://cjcf:adminadmin@ds048279.mlab.com:48279/matcha_',
 	db;
 
-exports.connect = function(callback) {
+exports.connect = (callback) => {
   MongoClient.connect(mongoUrl, function(err, database) {
     if (err) throw err;
     db = database;
@@ -12,7 +12,7 @@ exports.connect = function(callback) {
   });
 }
 
-exports.users = function() {
+exports.users = () => {
   return (db.collection('users'));
 }
 

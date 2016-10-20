@@ -15,30 +15,33 @@ var db_user_class 		= function (user) {
 							.update(this.data_user.pwd)
 							.digest('hex');
 
-	this.query 	= function (data) {
-		this.collection.find(data).toArray(function (err, result) {
+	this.query 	=  (data, callback) => {
+		var value = this.collection.find(data).toArray(function (err, result) {
 			if (err) {
-				return (-1);
+				console.log("WTF")
+				return callback(-1);
 			} else if (result.length) {
-				return (true);
+				console.log("ok");
+				return callback(true);
 			} else {
-				return (false);
+				console.log("nop");
+				return callback(false);
 			}
 		});
 	}
 
-	this.add 	= function () {
+	this.add 	=  () => {
 		this.collection.insert(this.data_user);
 	}
 
-	this.exist 	= function () {
+	this.exist 	=  (callback) => {
 		var login = this.query({
 				email: this.data_user.email
-			});
-		return (login);
+			}, callback);
+		return (login)
 	}
 
-	this.find	= function () {
+	this.find	= () => {
 		return (this.query(this.data_user));
 	}
 }
