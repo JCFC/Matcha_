@@ -1,7 +1,7 @@
-var mongodb = require('mongodb');
-var MongoClient = mongodb.MongoClient;
-var mongoUrl = 'mongodb://cjcf:adminadmin@ds048279.mlab.com:48279/matcha_';
-var db;
+var mongodb 	= require('mongodb'),
+	MongoClient = mongodb.MongoClient,
+	mongoUrl 	= 'mongodb://cjcf:adminadmin@ds048279.mlab.com:48279/matcha_',
+	db;
 
 exports.connect = function(callback) {
   MongoClient.connect(mongoUrl, function(err, database) {
@@ -15,3 +15,4 @@ exports.connect = function(callback) {
 exports.users = function() {
   return (db.collection('users'));
 }
+

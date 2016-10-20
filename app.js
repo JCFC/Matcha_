@@ -1,10 +1,10 @@
-var express = require('express');
-var app = express();
+var express 	= require('express'),
+	app 		= express(),
 
-var routes = require('./routes/index');
-var connect = require('./routes/connect');
-var register = require('./routes/register');
-var db = require('./models/db');
+	routes 		= require('./routes/index'),
+	connect 	= require('./routes/connect'),
+	register	= require('./routes/register'),
+	db			= require('./models/db');
 
 db.connect(function () {
 	
