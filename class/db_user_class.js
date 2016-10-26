@@ -18,13 +18,10 @@ var db_user_class 		= function (user) {
 	this.query 	=  (data, callback) => {
 		var value = this.collection.find(data).toArray(function (err, result) {
 			if (err) {
-				console.log("WTF")
 				return callback(-1);
 			} else if (result.length) {
-				console.log("ok");
 				return callback(true);
 			} else {
-				console.log("nop");
 				return callback(false);
 			}
 		});

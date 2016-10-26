@@ -10,11 +10,14 @@ router.get('/register', (req, res, next) => {
 
 router.post('/register/user', urlencodedParser, (req, res, next) => {
 	var register 	= require('../models/register');
-	if (register(req.body, db.users()) == false) {
-		res.redirect('/register?error=exist');
-	} else {
-		res.redirect('/');
-	}
+	register(req.body, db.users(), (response) => {
+		if (response == false) {
+			res.redirect('/register?error=exist');
+		}
+		else {
+			res.redirect('/');
+		}
+	})
 })
 
 module.exports = router;
